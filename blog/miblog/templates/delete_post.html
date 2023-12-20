@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Editar un Post{% endblock %}
+{% block content %}
+
+ 
+
+<h1>Borrar Post</h1>
+<br/><br/>
+<h3>Borrar: { post.title }</h3>
+
+<br/>
+<div class="form-group">
+    <form method="POST">
+    {% csrf_token %}
+    <strong>Estas seguro?</strong><br/><br/>
+    <button class="btn btn-secondary">Borrar</button>
+</div>
+
+{% endblock %}
