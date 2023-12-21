@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Título específico de la Landing Page
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center; color: #00ff00;">
+        <h1>Movies and More</h1>
+        <p>Espacio en construcción.</p>
+
+        <style>
+            .card {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+            }
+        </style>
+
+        <div class="card-deck">
+            <!-- Card 1 -->
+            <div class="card col-md-4 mb-4">
+                <img src="{% static 'miblog/images/avatar.jpg' %}" class="card-img-top" alt="Imagen 1">
+                <div class="card-body">
+                    <h5 class="card-title">Título de la Tarjeta 1</h5>
+                    <p class="card-text">Contenido de la Tarjeta 1.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Descripción 1</small>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card col-md-4 mb-4">
+                <img src="{% static 'miblog/images/lord.jpg' %}" class="card-img-top" alt="Imagen 2">
+                <div class="card-body">
+                    <h5 class="card-title">Título de la Tarjeta 2</h5>
+                    <p class="card-text">Contenido de la Tarjeta 2.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Descripción 2</small>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card col-md-4 mb-4">
+                <img src="{% static 'miblog/images/potter.jpg' %}" class="card-img-top" alt="Imagen 3">
+                <div class="card-body">
+                    <h5 class="card-title">Título de la Tarjeta 3</h5>
+                    <p class="card-text">Contenido de la Tarjeta 3.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Descripción 3</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck">
+            <!-- Card 4 -->
+            <div class="card col-md-4 mb-4">
+                <img src="{% static 'miblog/images/starwars.jpg' %}" class="card-img-top" alt="Imagen 4">
+                <div class="card-body">
+                    <h5 class="card-title">Título de la Tarjeta 4</h5>
+                    <p class="card-text">Contenido de la Tarjeta 4.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Descripción 4</small>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card col-md-4 mb-4">
+                <img src="{% static 'miblog/images/hqdefault.jpg' %}" class="card-img-top" alt="Imagen 5">
+                <div class="card-body">
+                    <h5 class="card-title">Título de la Tarjeta 5</h5>
+                    <p class="card-text">Contenido de la Tarjeta 5.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Descripción 5</small>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card col-md-4 mb-4">
+                <img src="{% static 'miblog/images/unnamed.jpg' %}" class="card-img-top" alt="Imagen 6">
+                <div class="card-body">
+                    <h5 class="card-title">Título de la Tarjeta 6</h5>
+                    <p class="card-text">Contenido de la Tarjeta 6.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Descripción 6</small>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

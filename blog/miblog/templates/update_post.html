@@ -2,22 +2,18 @@
 {% block title %}Editar un Post{% endblock %}
 {% block content %}
 
- 
 {% if user.is_authenticated %}
- <h1>Subir Post</h1>
- <br/><br/>
- <div class="form-group">
-    <form method="POST">
-    {% csrf_token %}
-    {{ form.as_ul }}
-    <button class="btn btn-secondary">Subir</button>
- </div>
+    <h1 class="text-green">Editar Post</h1>
+    <br/><br/>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <button class="btn btn-secondary">Subir</button>
+        </form>
+    </div>
 {% else %}
-
-No te encuentras logeado!
-
+    <p class="text-green">No estás autenticado.</p>
 {% endif %}
-
-
 
 {% endblock %}
