@@ -7,6 +7,7 @@ from django.views.generic import TemplateView
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm
+import json 
 
 #def home(request):
 #   return render(request, 'home.html' , {})
@@ -55,3 +56,17 @@ def crear_post(request):
         form = PostForm()
 
     return render(request, 'nombre_de_tu_template_para_creacion_de_post.html', {'form': form})
+
+def resultados_busqueda(request):
+    query = request.GET.get('q', '')
+    resultados_str = request.GET.get('resultados', '[]')
+
+    # Decodifica los resultados JSON
+    resultados = json.loads(resultados_str)
+
+    context = {
+        'query': query,
+        'resultados': resultados,
+    }
+
+    return render(request, 'resultados_busqueda.html', context)
