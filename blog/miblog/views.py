@@ -10,7 +10,8 @@ from django.urls import reverse_lazy
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
-    ordering = ['-id']                #orden de los comentarios
+    ordering = ['-post_date']
+    #ordering = ['-id']                #orden de los comentarios
 
 
 class DetailView(DetailView):
