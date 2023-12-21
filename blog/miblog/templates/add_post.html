@@ -3,8 +3,8 @@
 {% block content %}
 
  
-
-<h1>Blog Post</h1>
+{% if user.is_authenticated %}
+<h1>Add post</h1>
 <br/><br/>
 <div class="form-group">
     <form method="POST">
@@ -12,5 +12,12 @@
     {{ form.as_ul }}
     <button class="btn btn-secondary">Post</button>
 </div>
+
+{% else %}
+
+No te encuentras logeado!
+
+{% endif %}
+
 
 {% endblock %}

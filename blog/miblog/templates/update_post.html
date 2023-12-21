@@ -3,14 +3,21 @@
 {% block content %}
 
  
-
-<h1>Subir Post</h1>
-<br/><br/>
-<div class="form-group">
+{% if user.is_authenticated %}
+ <h1>Subir Post</h1>
+ <br/><br/>
+ <div class="form-group">
     <form method="POST">
     {% csrf_token %}
     {{ form.as_ul }}
     <button class="btn btn-secondary">Subir</button>
-</div>
+ </div>
+{% else %}
+
+No te encuentras logeado!
+
+{% endif %}
+
+
 
 {% endblock %}

@@ -24,20 +24,33 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              
-              <li class="nav-item">
+              {% if user.is_authenticated %}
+                <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
-              </li>
+                </li>
 
-              <!--registro-->
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Register</a>
-              </li>
-             <!--login-->
-             <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
+                <!--logout-->
+               <li class="nav-item">
+               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+               </li>
+              {% else %}
+
+               <!--registro-->
+               <li class="nav-item">
+                 <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+               <!--login-->
+               <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+               </li>
+
+              {% endif %}
 
 
+             
+
+             
+      
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

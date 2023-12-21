@@ -3,7 +3,7 @@
 {% block content %}
 
  
-
+{% if user.is_authenticated %}
 <h1>Borrar Post</h1>
 <br/><br/>
 <h3>Borrar: { post.title }</h3>
@@ -15,5 +15,12 @@
     <strong>Estas seguro?</strong><br/><br/>
     <button class="btn btn-secondary">Borrar</button>
 </div>
+
+{% else %}
+
+No te encuentras logeado!
+
+{% endif %}
+
 
 {% endblock %}
