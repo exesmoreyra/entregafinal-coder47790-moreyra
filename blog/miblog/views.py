@@ -79,8 +79,11 @@ def crear_avatar(request):
         form = AvatarForm(request.POST, request.FILES)
         if form.is_valid():
             avatar = form.cleaned_data['avatar']
+            # Guarda la información del avatar en el modelo de usuario o donde lo almacenes
+            request.user.avatar = avatar
+            request.user.save()
             messages.success(request, 'Avatar actualizado correctamente.')
-            return redirect('base.html')  # Cambia aquí para redirigir a 'home' en lugar de 'avatar_creado'
+            return redirect('base')  # Redirige a la página principal
         else:
             messages.error(request, 'Error al actualizar el avatar. Por favor, corrija los errores del formulario.')
     else:
