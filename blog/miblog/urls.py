@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import HomeView, DetailView, AddPostView, UpdatePostView, DeletePostView, LandingPageView, resultados_busqueda
+from .views import crear_avatar, avatar_creado
 
 urlpatterns = [
     path('', LandingPageView.as_view(), name='landing_page'), 
@@ -8,5 +9,9 @@ urlpatterns = [
     path('add_post/', AddPostView.as_view(), name='add_post'),
     path('article/edit/<int:pk>', UpdatePostView.as_view(), name='update_post'),
     path('article/<int:pk>/borrar', DeletePostView.as_view(), name='delete_post'),
-    path('resultados_busqueda/', resultados_busqueda, name='resultados_busqueda'),  # Corregimos la importación
+    path('resultados_busqueda/', resultados_busqueda, name='resultados_busqueda'), 
+    path('crear-avatar/', crear_avatar, name='crear_avatar'),
+    path('avatar-creado/', avatar_creado, name='avatar_creado')
+    
 ]
+ 

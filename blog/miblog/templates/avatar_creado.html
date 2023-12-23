@@ -1,0 +1,16 @@
+<!-- avatar_creado.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Creado Exitosamente</title>
+</head>
+<body>
+    <h1>¡Avatar Creado Exitosamente!</h1>
+    {% if avatar_url %}
+        <img src="{{ avatar_url }}" alt="Avatar">
+    {% endif %}
+    <!-- Puedes agregar más contenido o redirigir a otras páginas si es necesario -->
+</body>
+</html>

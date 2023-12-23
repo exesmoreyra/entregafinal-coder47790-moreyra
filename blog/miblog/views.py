@@ -8,6 +8,8 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm
 import json 
+from .forms import AvatarForm 
+from django.contrib import messages
 
 #def home(request):
 #   return render(request, 'home.html' , {})
@@ -70,3 +72,22 @@ def resultados_busqueda(request):
     }
 
     return render(request, 'resultados_busqueda.html', context)
+
+@login_required
+def crear_avatar(request):
+    if request.method == 'POST':
+        form = AvatarForm(request.POST, request.FILES)
+        if form.is_valid():
+            avatar = form.cleaned_data['avatar']
+            messages.success(request, 'Avatar actualizado correctamente.')
+            return redirect('base.html')  # Cambia aquí para redirigir a 'home' en lugar de 'avatar_creado'
+        else:
+            messages.error(request, 'Error al actualizar el avatar. Por favor, corrija los errores del formulario.')
+    else:
+        form = AvatarForm()
+
+    return render(request, 'crear_avatar.html', {'form': form})
+
+def avatar_creado(request):
+    avatar_url = request.GET.get('avatar_url', None)
+    return render(request, 'avatar_creado.html', {'avatar_url': avatar_url})

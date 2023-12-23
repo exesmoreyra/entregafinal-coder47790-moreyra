@@ -18,18 +18,27 @@
             .card:hover {
                 transform: scale(1.05);
             }
+
+            .wikipedia-button {
+                background-color: #007bff;
+                color: #fff;
+                padding: 5px 10px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
         </style>
 
-        <div class="card-deck">
+        <!-- Agrega la clase mx-auto al contenedor para centrarlo -->
+        <div class="card-deck mx-auto">
             <!-- Card 1 -->
             <div class="card col-md-4 mb-4">
                 <img src="{% static 'miblog/images/avatar.jpg' %}" class="card-img-top" alt="Imagen 1">
                 <div class="card-body">
                     <h5 class="card-title">Avatar</h5>
-                    
+                    <!-- Contenido adicional de la card... -->
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Descripción 1</small>
+                    <a href="https://es.wikipedia.org/wiki/Avatar_(pel%C3%ADcula)" class="wikipedia-button" target="_blank">Ver en Wikipedia</a>
                 </div>
             </div>
 
@@ -38,10 +47,10 @@
                 <img src="{% static 'miblog/images/lord.jpg' %}" class="card-img-top" alt="Imagen 2">
                 <div class="card-body">
                     <h5 class="card-title">Lord of the Rings</h5>
-                  
+                    <!-- Contenido adicional de la card... -->
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Descripción 2</small>
+                    <a href="https://es.wikipedia.org/wiki/The_Lord_of_the_Rings" class="wikipedia-button" target="_blank">Ver en Wikipedia</a>
                 </div>
             </div>
 
@@ -50,24 +59,24 @@
                 <img src="{% static 'miblog/images/potter.jpg' %}" class="card-img-top" alt="Imagen 3">
                 <div class="card-body">
                     <h5 class="card-title">Harry Potter</h5>
-                   
+                    <!-- Contenido adicional de la card... -->
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Descripción 3</small>
+                    <a href="https://es.wikipedia.org/wiki/Harry_Potter" class="wikipedia-button" target="_blank">Ver en Wikipedia</a>
                 </div>
             </div>
         </div>
 
-        <div class="card-deck">
+        <div class="card-deck mx-auto">
             <!-- Card 4 -->
             <div class="card col-md-4 mb-4">
                 <img src="{% static 'miblog/images/starwars.jpg' %}" class="card-img-top" alt="Imagen 4">
                 <div class="card-body">
                     <h5 class="card-title">Star Wars</h5>
-                  
+                    <!-- Contenido adicional de la card... -->
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Descripción 4</small>
+                    <a href="https://es.wikipedia.org/wiki/Star_Wars" class="wikipedia-button" target="_blank">Ver en Wikipedia</a>
                 </div>
             </div>
 
@@ -76,10 +85,10 @@
                 <img src="{% static 'miblog/images/hqdefault.jpg' %}" class="card-img-top" alt="Imagen 5">
                 <div class="card-body">
                     <h5 class="card-title">Fast and Furious X</h5>
-                    
+                    <!-- Contenido adicional de la card... -->
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Descripción 5</small>
+                    <a href="https://es.wikipedia.org/wiki/Fast_%26_Furious" class="wikipedia-button" target="_blank">Ver en Wikipedia</a>
                 </div>
             </div>
 
@@ -88,10 +97,10 @@
                 <img src="{% static 'miblog/images/unnamed.jpg' %}" class="card-img-top" alt="Imagen 6">
                 <div class="card-body">
                     <h5 class="card-title">John Wick 4</h5>
-                  
+                    <!-- Contenido adicional de la card... -->
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Descripción 6</small>
+                    <a href="https://es.wikipedia.org/wiki/John_Wick:_Chapter_4" class="wikipedia-button" target="_blank">Ver en Wikipedia</a>
                 </div>
             </div>
         </div>
