@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Nosotros - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <img src="{% static 'miblog/images/exe.jpg' %}" class="card-img-top" alt="Imagen Persona 1">
+                <div class="card-body">
+                    <h5 class="card-title">Exequiel Moreyra</h5>
+                    <p class="card-text">Descripción de Exequiel.</p>
+                    <a href="https://www.linkedin.com/in/exequiel-moreyra-/" class="btn btn-primary" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <img src="{% static 'miblog/images/nico.jpg' %}" class="card-img-top" alt="Imagen Persona 2">
+                <div class="card-body">
+                    <h5 class="card-title">Nicolas Dondo</h5>
+                    <p class="card-text">Descripción de Nicolas.</p>
+                    <a href="https://www.linkedin.com/in/nicolas-dondo/" class="btn btn-primary" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -27,4 +27,4 @@ class EditForm(forms.ModelForm):
         }
 
 class AvatarForm(forms.Form):
-    avatar = forms.ImageField()
+    avatar = forms.ImageField(label='Selecciona tu avatar', widget=forms.FileInput(attrs={'accept': 'image/jpeg, image/png'}))
