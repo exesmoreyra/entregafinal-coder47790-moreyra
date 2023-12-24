@@ -1,6 +1,7 @@
 # blog/forms.py
 from django import forms
 from .models import Post
+from .models import CustomUser
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -26,5 +27,16 @@ class EditForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
-class AvatarForm(forms.Form):
-    avatar = forms.ImageField(label='Selecciona tu avatar', widget=forms.FileInput(attrs={'accept': 'image/jpeg, image/png'}))
+class AvatarForm(forms.ModelForm):
+    AVATAR_CHOICES = [
+        ('avatar.jpg', 'Avatar 1'),
+        ('lord.jpg', 'Avatar 2'),
+        ('potter.jpg', 'Avatar 3'),
+        ('starwars.jpg', 'Avatar 4'),
+    ]
+
+    avatar = forms.ChoiceField(choices=AVATAR_CHOICES, widget=forms.RadioSelect)
+
+    class Meta:
+        model = CustomUser
+        fields = ['avatar']

@@ -14,52 +14,52 @@
     </title>
 </head>
 <body class="bg-black text-green">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'landing_page' %}"> Explora el Mundo Cinematográfico</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">Ver Posts</a>
-                </li>
-                {% if user.is_authenticated %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'landing_page' %}"> Explora el Mundo Cinematográfico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                        <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'home' %}">Ver Posts</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'crear_avatar' %}">
-                            {% if user.avatar %}
-                                <img src="{{ user.avatar.url }}" alt="Avatar" style="height: 30px; width: 30px; border-radius: 50%;">
-                            {% else %}
-                                <img src="{% static 'ruta/a/imagen-predeterminada.jpg' %}" alt="Default Avatar" style="height: 30px; width: 30px; border-radius: 50%;">
-                            {% endif %}
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                {% endif %}
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'crear_avatar' %}">
+                                {% if user.avatar %}
+                                    <img src="{{ user.avatar.url }}" alt="Avatar" style="height: 30px; width: 30px; border-radius: 50%;">
+                                {% else %}
+                                    <!-- Puedes agregar un avatar predeterminado si el usuario no tiene uno -->
+                                    <img src="{% static 'miblog/images/starwars.jpg' %}" alt="Default Avatar" style="height: 30px; width: 30px; border-radius: 50%;">
+                                {% endif %}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 <br/>
 <div class="container">
     {% block content %}

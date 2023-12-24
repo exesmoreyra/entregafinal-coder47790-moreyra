@@ -76,24 +76,26 @@ def resultados_busqueda(request):
 @login_required
 def crear_avatar(request):
     if request.method == 'POST':
-        form = AvatarForm(request.POST, request.FILES)
+        form = AvatarForm(request.POST, instance=request.user)
         if form.is_valid():
-            avatar = form.cleaned_data['avatar']
-            request.user.avatar = avatar
+            # No necesitas guardar el formulario directamente porque es una imagen.
+            # Simplemente toma el valor del campo avatar y asígnalo manualmente al usuario.
+            avatar_choice = form.cleaned_data['avatar']
+            request.user.avatar = f'avatars/{avatar_choice}'
             request.user.save()
-            messages.success(request, 'Avatar actualizado correctamente.')
-            return redirect('home')  # Cambiado de 'base' a 'home'
-        else:
-            messages.error(request, 'Error al actualizar el avatar. Por favor, corrija los errores del formulario.')
-    else:
-        form = AvatarForm()
 
+            messages.success(request, 'Avatar actualizado exitosamente.')
+            return redirect('landing_page')
+    else:
+        form = AvatarForm(instance=request.user)
     return render(request, 'crear_avatar.html', {'form': form})
+
 
 
 def avatar_creado(request):
     avatar_url = request.GET.get('avatar_url', None)
     return render(request, 'avatar_creado.html', {'avatar_url': avatar_url})
+
 
 class NosotrosView(View):
     def get(self, request):
