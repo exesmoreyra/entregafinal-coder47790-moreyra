@@ -57,7 +57,7 @@ def crear_post(request):
     else:
         form = PostForm()
 
-    return render(request, 'nombre_de_tu_template_para_creacion_de_post.html', {'form': form})
+    return render(request, 'landing_page.html', {'form': form})
 
 def resultados_busqueda(request):
     query = request.GET.get('q', '')
@@ -78,14 +78,13 @@ def crear_avatar(request):
     if request.method == 'POST':
         form = AvatarForm(request.POST, instance=request.user)
         if form.is_valid():
-            # No necesitas guardar el formulario directamente porque es una imagen.
-            # Simplemente toma el valor del campo avatar y asígnalo manualmente al usuario.
-            avatar_choice = form.cleaned_data['avatar']
-            request.user.avatar = f'avatars/{avatar_choice}'
-            request.user.save()
+             avatar_choice = form.cleaned_data['avatar']
+             print(f'Avatar Choice: {avatar_choice}') 
+             request.user.avatar = f'avatars/{avatar_choice}'
+             request.user.save()
 
-            messages.success(request, 'Avatar actualizado exitosamente.')
-            return redirect('landing_page')
+             messages.success(request, 'Avatar actualizado exitosamente.')
+             return redirect('landing_page')
     else:
         form = AvatarForm(instance=request.user)
     return render(request, 'crear_avatar.html', {'form': form})

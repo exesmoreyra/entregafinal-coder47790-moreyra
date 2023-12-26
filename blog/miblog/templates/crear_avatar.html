@@ -7,16 +7,18 @@
         {% csrf_token %}
         
         {# Muestra las opciones de avatar con miniaturas #}
-        {% for radio in form.avatar %}
-        {{ radio.tag }}
-        <img src="miblog/images/{{ radio.choice_value }}" alt="{{ radio.choice_label }}" style="height: 50px; width: 50px; border-radius: 50%; filter: invert(0);">
-        {% endfor %}
-    
-    {# Muestra la imagen del avatar seleccionado #}
-    {% if form.cleaned_data.avatar %}
-        <h5>Miniatura del avatar seleccionado:</h5>
-        <img src="{% static 'miblog/images/' %}{{ form.cleaned_data.avatar }}" alt="Avatar Preview" style="height: 100px; width: 100px; border-radius: 50%;">
-    {% endif %}
+        {# Muestra las opciones de avatar con miniaturas #}
+       {# Muestra las opciones de avatar con miniaturas #}
+       {% for radio in form.avatar %}
+       {{ radio.tag }}
+       <img src="/media/{{ radio.choice_value }}" alt="{{ radio.choice_label }}" style="height: 50px; width: 50px; border-radius: 50%; filter: invert(0);">
+   {% endfor %}
+   
+   {# Muestra la imagen del avatar seleccionado #}
+   {% if form.cleaned_data.avatar %}
+       <h5>Miniatura del avatar seleccionado:</h5>
+       <img src="/media/{{ form.cleaned_data.avatar }}" alt="Avatar Preview" style="height: 100px; width: 100px; border-radius: 50%;">
+   {% endif %}
         
         <button type="submit">Guardar</button>
     </form>
